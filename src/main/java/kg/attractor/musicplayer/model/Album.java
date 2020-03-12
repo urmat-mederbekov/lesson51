@@ -2,6 +2,7 @@ package kg.attractor.musicplayer.model;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -15,6 +16,7 @@ public class Album {
 
     @Id
     private String id;
+    @Indexed
     private String name;
     private static List<Album> albums = makeAlbums();
     @DBRef

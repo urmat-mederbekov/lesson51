@@ -2,6 +2,7 @@ package kg.attractor.musicplayer.model;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
@@ -16,6 +17,7 @@ public class Composition {
 
     @Id
     private String id;
+    @Indexed
     private String name;
     private LocalDate releaseDate;
     private static List<Composition> compositions = makeComposition();
